@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Annie Liu</title>
+    <title>Annie Liu</title>
+    <link rel="icon" href="assets/butterfly.png" type="image/png">
 </head>
 <body>
     <header>
@@ -29,33 +30,101 @@
     </header>
 
     <main>
+        <hr>
+        <h1>Hello!</h1>
+
         <table>
             <tr>
                 <!-- Profile Picture -->
                 <td>
-                    <img src="assets/profile.jpg" alt="Profile Picture" width="180px;">
+                    <img src="assets/profile.jpg" alt="Profile Picture" height="200px;">
                 </td>
 
                 <!-- Welcome Message -->
                 <td>
-                    <h2>Hello!</h2>
-                    <p>Hi, my name is Annie Liu, and I'm a fourth-year computer science major at UC San Diego, interested in pursuing a career in software engineering. Along with a solid foundation in a variety of programming languages and software tools, I am a natural leader with experience mentoring and managing teams. With exceptional communication skills, strong organization, and resourcefulness, I bring a quick learning ability to contribute effectively to innovative projects.</p>
-                    <p>During my free time, I love staying fit through basketball, weightlifting, and running around San Diego. I believe exercise builds both physical and mental endurance, fostering the grit needed to face life’s challenges. One of my favorite ways to experience different cultures is through food, and I enjoy sharing the unique eats I discover on my food Instagram and Beli.
+                    <p>Hi, my name is <span class="highlight">Annie Liu</span>, and I'm a fourth-year computer science major at UC San Diego, interested in pursuing a career in software engineering. Along with a solid foundation in a variety of programming languages and software tools, I am a natural leader with experience mentoring and managing teams. With exceptional communication skills, strong organization, and resourcefulness, I bring a quick learning ability to contribute effectively to innovative projects.<br><br>
+                    During my free time, I love staying fit through basketball, weightlifting, and running around San Diego. I believe exercise builds both physical and mental endurance, fostering the grit needed to face life’s challenges. One of my favorite ways to experience different cultures is through food, and I enjoy sharing the unique eats I discover on my food Instagram and Beli.
 
                     </p>
                 </td>
             </tr>
         </table>
+
+        <h2>Let's Connect!</h2>
+
+        <p>Follow me on LinkedIn, shoot me an email, or directly contact me through the form below:</p>
+
+        <form action="#" method="post" autocomplete="off">
+            <fieldset>
+                <legend><b>Contact Form</b></legend>
+        
+                <!-- name field -->
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name">
+                <br>
+        
+                <!-- email field -->
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email">
+                <br>
+        
+                <!-- phone number field -->
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+                <br>
+
+                <!-- preferred contact method -->
+                <label for="preferredContact">Preferred Contact Method:</label>
+                <input list="contactMethods" id="preferredContact" name="preferredContact">
+                <datalist id="contactMethods">
+                    <option value="Email">
+                    <option value="Phone">
+                    <option value="Text Message">
+                </datalist>
+                <br>
+
+                <!-- inquiry type -->
+                <label for="inquiryType">Type of Inquiry:</label>
+                <select id="inquiryType" name="inquiryType">
+                    <optgroup label="Recruitment">
+                        <option value="internship">Internship</option>
+                        <option value="full-time">Full Time</option>
+                    </optgroup>
+                    <optgroup label="General Inquiries">
+                        <option value="mentorship">Mentorship</option>
+                        <option value="resume">Resume</option>
+                        <option value="other">Other</option>
+                    </optgroup>
+                </select>
+                <br><br>
+        
+                <!-- inquiry field -->
+                <label for="inquiry">Inquiry:</label>
+                <br>
+                <textarea id="inquiry" name="inquiry" rows="5" cols="50" placeholder="Write your inquiry here..."></textarea>
+                <br>
+                
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+        
+            </fieldset>
+        </form>
+        
     </main>
 
     <footer>
+        <div>
+            <br>
+            <p>This site was made by Annie Liu for CSE 134B.</p>
+        </div>
+
         <!-- Social Media Icons -->
         <section>
             <a href="mailto:anniejiaqiliu@gmail.com" target="_blank" title="Email anniejiaqiliu@gmail.com">
-                <img src="assets/email.png" alt="Email">
+                <img src="assets/email.png" width="20px" alt="Email">
             </a>
             <a href="https://linkedin.com/in/anniejiaqiliu" target="_blank" title="Stay posted with me on LinkedIn">
-                <img src="assets/linkedin.png" alt="LinkedIn">
+                <img src="assets/linkedin.png" width="20px" alt="LinkedIn">
             </a>
         </section>
     </footer>

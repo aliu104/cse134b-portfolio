@@ -4,6 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <link rel="icon" href="assets/butterfly.png" type="image/png">
+
+    <style>
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: left;
+            flex-wrap: wrap; 
+        }
+
+        custom-project-card {
+            display: block;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px;
+            max-width: 450px;
+            background-color: rgb(252, 245, 255);
+        }
+
+        custom-project-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        custom-project-card .card-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        custom-project-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        custom-project-card p {
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
+
 </head>
 <body>
     <header>
@@ -31,25 +74,53 @@
     </header>
 
     <main>
+        <h1>Projects</h1>
+        <code>
+            System.out.println("You learn the most when you actually do it.");
+        </code>
+
+        <hr>
+
         <!-- Internships section -->
         <section>
             <h2>Internships</h2>
-            <ul>
-                <li>
-                    <section>
-                        <h3>Bloomberg</h3>
-                        <p>Software Engineer Intern, June 2024 - September 2024</p>
-                        <p>Designed, implemented, and tested a web application via C++ and TypeScript to perform mass updates directly thru the Bloomberg Terminal without engineering involvement. Developed web services, a SQL-based database schema, and an intuitive front-end interface.</p>
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h3>Splunk</h3>
-                        <p>Software Engineer Intern, June 2023 - September 2023</p>
-                        <p>Streamlined Splunk’s testing process by automating steps to enter debug sessions and providing rapid access to diagnostic test tools like pdb, pstacks, and live logs via tmux, bash, and Python. Enhanced developer experience by providing a centralized, intuitive resource to navigate and initiate debug sessions effectively in response to an increased load of 150+ Gitlab pipelines per month.</p>
-                    </section>
-                </li>
-            </ul>
+
+            <template id="customProjectCardTemplate">
+                <custom-project-card>
+                    <h3>Project Title</h3>
+                    <div class="card-content">
+                        <img src="assets/logo.png" alt="Project Logo">
+                        <p>
+                            <em>Position and Duration</em><br>
+                            Description.
+                        </p>
+                    </div>
+                </custom-project-card>
+            </template>
+
+            <div class="card-container">
+                <custom-project-card>
+                    <h3>Bloomberg</h3>
+                    <div class="card-content">
+                        <img src="assets/bloomberg.png" alt="Bloomberg Logo">
+                        <p>
+                            <em>Software Engineer Intern, Summer 2024</em><br>
+                            Designed, implemented, and tested a web application via C++ and TypeScript to perform mass updates directly thru the Bloomberg Terminal without engineering involvement. Developed web services, a SQL-based database schema, and an intuitive front-end interface
+                        </p>
+                    </div>
+                </custom-project-card>
+
+                <custom-project-card>
+                    <h3>Splunk</h3>
+                    <div class="card-content">
+                        <img src="assets/splunk.png" alt="Splunk Logo">
+                        <p>
+                            <em>Software Engineer Intern, Summer 2023</em><br>
+                            Streamlined Splunk’s testing process by automating steps to enter debug sessions and providing rapid access to diagnostic test tools via tmux, bash, and Python. Enhanced developer experience by providing a centralized, intuitive resource to navigate and initiate debug sessions effectively.
+                        </p>
+                    </div>
+                </custom-project-card>
+            </div>
         </section>
         
         <!-- Research section -->
@@ -59,13 +130,27 @@
                 <li>
                     <section>
                         <h3>SamBamViz Visualizer</h3>
-                        <p>SamBamViz is a tool, built by Professor Moshiri, that generates a spreadsheet containing the number of As, Cs, Gs, Ts, and gaps in each position from a read mapping (SAM/BAM) file. However, it is difficult to make big picture inferences about the output, which poses a problem for public health officials who do not have the experience or resources to analyze such data. I developed a user-friendly web application that visualizes SamBamViz’s output in order to effectively gain a better insight from these viral genomic sequences.</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <figure>
+                                        <img src="assets/sambamviz.png" width="400px">
+                                        <figcaption>Try SamBamViz Visualizer via this <a href="https://niema.net/SamBamViz/">link</a>.</figcaption>
+                                    </figure>
+                
+                                </td>
+
+                                <td>
+                                    <p><dfn>SamBamViz</dfn> is a tool, built by Professor Moshiri, that generates a spreadsheet containing the number of As, Cs, Gs, Ts, and gaps in each position from a read mapping (SAM/BAM) file. However, it is difficult to make big picture inferences about the output, which poses a problem for public health officials who do not have the experience or resources to analyze such data. I developed a user-friendly web application that visualizes SamBamViz’s output in order to effectively gain a better insight from these viral genomic sequences.</p>
+                                </td>
+                            </tr>
+                        </table>
                     </section>
                 </li>
                 <li>
                     <section>
                         <h3>EMPress Compression</h3>
-                        <p>EMPress is an “interactive web tool,” built by Kalen Cantrell from the UCSD's Center of Microbiome Innovation, for graphing phylogenetic trees. Unfortunately, EMPress crashes and is unable to handle larger trees with around two million nodes. I implemented data compression techniques using JavaScript, Gzip, and Pako Inflation to load large data into EMPress, by primarily targeting the compression of three crucial pieces of data in loading the tree (tree, names, and lengths arrays). This method led to 5x increase in the number of nodes that can be visualized by trees.</p>
+                        <p><dfn>EMPress</dfn> is an “interactive web tool,” built by Kalen Cantrell from the UCSD's Center of Microbiome Innovation, for graphing phylogenetic trees. Unfortunately, EMPress crashes and is unable to handle larger trees with around two million nodes. I implemented data compression techniques using JavaScript, Gzip, and Pako Inflation to load large data into EMPress, by primarily targeting the compression of three crucial pieces of data in loading the tree (tree, names, and lengths arrays). This method led to 5x increase in the number of nodes that can be visualized by trees.</p>
                     </section>
                 </li>
                 <li>

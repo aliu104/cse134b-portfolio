@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labs</title>
+    <link rel="icon" href="assets/butterfly.png" type="image/png">
+    <script src="scripts/custom-helloworld.js" defer></script>
 </head>
 <body>
+    <dialog open id="testDialog">
+        <p>This dialog is open by default and cannot be closed without JS :(</p>
+        <button>Close</button>
+    </dialog>
+
     <header>
         <!-- Table layout to place H1 and nav side by side, nav at the end of the screen -->
         <table>
@@ -31,7 +38,86 @@
     </header>
 
     <main>
-        <h1>Useful HTML Elements</h1>
+        <hello-world></hello-world>
+        <hgroup>
+            <h1>Useful HTML Elements</h1>
+            <h4>Showcasing HTML tags that couldn't be shown in the rest of the site...</h2>
+        </hgroup>
+
+        <hr>
+
+        <h2>pre</h2>
+        <pre>
+This is for indentation!
+    This is for indentation!
+        This is for indentation!
+            This is for indentation!
+        </pre>
+
+        <h2>canvas</h2>
+        <p>I drew a heart on the Canvas.</p>
+        <canvas id="heartCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+
+        <noscript>
+            <p>JavaScript is required to view the canvas.</p>
+        </noscript>
+
+        <script>
+            const canvas = document.getElementById('heartCanvas');
+            const ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.moveTo(150, 150);
+            ctx.bezierCurveTo(130, 100, 70, 100, 150, 200);
+            ctx.bezierCurveTo(230, 100, 170, 100, 150, 150);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+            ctx.closePath();
+        </script>
+
+        <h2>audio and video</h2>
+        <p>The video has been muted, and the audio has been extracted.</p>
+
+        <audio controls><source src="assets/claw.mp3" type="audio/mp3"></audio>
+        <br>
+        <video width="400" autoplay loop muted>
+            <source src="assets/claw.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <h2>picture</h2>
+        <p>The picture will change as width of screen changes.</p>
+        <picture>
+            <!-- for screens >800px -->
+            <source srcset="assets/plushies.jpg" width="600px" media="(min-width: 800px)">
+            
+            <!-- for screens <800px -->
+            <source srcset="assets/smallplush.png" width="300px" media="(max-width: 799px)">
+
+            <img src="assets/butterfly.png" alt="using picture tag">
+        </picture>
+        
+        <h2>svg</h2>
+        <p>
+            This is an example of simple inline svg: 
+            <svg width="20" height="20">
+                <circle cx="10" cy="10" r="8" fill="pink" />
+            </svg>
+            This is a pink circle!
+        </p>
+
+        <h2>ins and del</h2>
+        <p>This would be good if there was a <del>deletion</del> <ins>update</ins> that I actually needed to make.</p>
+
+        <h2>search</h2>
+        <search>
+            <input type="search" placeholder="Search for something...">
+            <button type="submit">Search</button>
+        </search>        
+
+        <h2>kbd</h2>
+        <p>My least favorite git command is <kbd>git merge</kbd> because merge conflicts are painful.</p>
+
     </main>
 
 </body>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
+    <link rel="icon" href="assets/butterfly.png" type="image/png">
 </head>
 <body>
     <header>
@@ -33,6 +34,8 @@
     <main>
         <h1>Resume</h1>
 
+        <hr>
+
         <!-- Resume button -->
         <a href="assets/Liu_Annie_Resume_grad.pdf" target="_blank">
             <button>Resume as PDF</button>
@@ -42,22 +45,26 @@
         <section>
             <h2>Education</h2>
     
-            <ul>
+            <ol>
                 <li>
                     <section>
-                        <h3>UC San Diego</h3>
-                        <p>September 2021 - June 2025</p>
-                        <p>B.S. Computer Science</p>
-                        <p>GPA: 3.97</p>
+                        <h3><abbr title="University of California">UC</abbr> San Diego</h3>
+                        <address>9500 Gilman Drive, La Jolla, CA 92093</address>
+                        <p>
+                            September 2021 - June 2025<br>
+                            <abbr title="Bachelor of Science">B.S.</abbr> Computer Science<br>
+                            GPA: 3.97
+                        </p>
                     </section>
                 </li>
                 <li>
                     <section>
                         <h3>Santa Clara High School</h3>
+                        <address>3000 Benton Street, Santa Clara, CA 95051</address>
                         <p>August 2017 - June 2021</p>
                     </section>
                 </li>
-            </ul>
+            </ol>
         </section>
                     
         <!-- Coursework section -->
@@ -71,8 +78,13 @@
         <!-- Skills section -->
         <section>
             <h2>Skills</h2>
-            <p><strong>Languages</strong>: Java, Python, C, C++, SQL, HTML, TypeScript, Bash, LaTeX</p>
-            <p><strong>Software Tools</strong>: Linux/Ubuntu, Git/Gitlab/GitHub/Github Actions CI/CD, GDB, Vim, Android Studio, Jupyter Notebook, JUnit</p>
+            <dl>
+                <dt><strong>Languages</strong></dt>
+                <dd>Java, Python, C, C++, SQL, HTML, TypeScript, Bash, LaTeX</dd>
+
+                <dt><strong>Software Tools</strong></dt>
+                <dd>Linux/Ubuntu, Git/Gitlab/GitHub/Github Actions CI/CD, GDB, Vim, Android Studio, Jupyter Notebook, JUnit</dd>
+            </dl>
         </section>
                     
         <!-- Organizations section -->
