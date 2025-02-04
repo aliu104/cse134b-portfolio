@@ -41,83 +41,96 @@
         <hello-world></hello-world>
         <hgroup>
             <h1>Useful HTML Elements</h1>
-            <h4>Showcasing HTML tags that couldn't be shown in the rest of the site...</h2>
+            <p>Showcasing HTML tags that couldn't be shown in the rest of the site...</p>
         </hgroup>
 
         <hr>
 
-        <h2>pre</h2>
-        <pre>
+        <section>
+            <h2>pre</h2>
+            <pre>
 This is for indentation!
     This is for indentation!
         This is for indentation!
             This is for indentation!
-        </pre>
+            </pre>
+        </section>
 
-        <h2>canvas</h2>
-        <p>I drew a heart on the Canvas.</p>
-        <canvas id="heartCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+        <section>
+            <h2>canvas</h2>
+            <p>I drew a heart on the Canvas.</p>
+            <canvas id="heartCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>        
+            <noscript>
+                <p>JavaScript is required to view the canvas.</p>
+            </noscript>
 
-        <noscript>
-            <p>JavaScript is required to view the canvas.</p>
-        </noscript>
+            <script>
+                const canvas = document.getElementById('heartCanvas');
+                const ctx = canvas.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.bezierCurveTo(130, 100, 70, 100, 150, 200);
+                ctx.bezierCurveTo(230, 100, 170, 100, 150, 150);
+                ctx.fillStyle = 'red';
+                ctx.fill();
+                ctx.closePath();
+            </script>
+        </section>
 
-        <script>
-            const canvas = document.getElementById('heartCanvas');
-            const ctx = canvas.getContext('2d');
-            ctx.beginPath();
-            ctx.moveTo(150, 150);
-            ctx.bezierCurveTo(130, 100, 70, 100, 150, 200);
-            ctx.bezierCurveTo(230, 100, 170, 100, 150, 150);
-            ctx.fillStyle = 'red';
-            ctx.fill();
-            ctx.closePath();
-        </script>
+        <section>
+            <h2>audio and video</h2>
+            <p>The video has been muted, and the audio has been extracted.</p>
 
-        <h2>audio and video</h2>
-        <p>The video has been muted, and the audio has been extracted.</p>
+            <audio controls><source src="assets/claw.mp3" type="audio/mp3"></audio>
+            <br>
+            <video width="400" autoplay loop muted>
+                <source src="assets/claw.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
 
-        <audio controls><source src="assets/claw.mp3" type="audio/mp3"></audio>
-        <br>
-        <video width="400" autoplay loop muted>
-            <source src="assets/claw.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <section>
+            <h2>picture</h2>
+            <p>The picture will change as width of screen changes.</p>
+            <picture>
+                <!-- for screens >800px -->
+                <source srcset="assets/plushies.jpg" width="600" media="(min-width: 800px)">
+                
+                <!-- for screens <800px -->
+                <source srcset="assets/smallplush.png" width="300" media="(max-width: 799px)">
 
-
-        <h2>picture</h2>
-        <p>The picture will change as width of screen changes.</p>
-        <picture>
-            <!-- for screens >800px -->
-            <source srcset="assets/plushies.jpg" width="600px" media="(min-width: 800px)">
-            
-            <!-- for screens <800px -->
-            <source srcset="assets/smallplush.png" width="300px" media="(max-width: 799px)">
-
-            <img src="assets/butterfly.png" alt="using picture tag">
-        </picture>
+                <img src="assets/butterfly.png" alt="using picture tag">
+            </picture>
+        </section>
         
-        <h2>svg</h2>
-        <p>
-            This is an example of simple inline svg: 
-            <svg width="20" height="20">
-                <circle cx="10" cy="10" r="8" fill="pink" />
-            </svg>
-            This is a pink circle!
-        </p>
+        <section>
+            <h2>svg</h2>
+            <p>
+                This is an example of simple inline svg: 
+                <svg width="20" height="20">
+                    <circle cx="10" cy="10" r="8" fill="pink" />
+                </svg>
+                This is a pink circle!
+            </p>
+        </section>
 
-        <h2>ins and del</h2>
-        <p>This would be good if there was a <del>deletion</del> <ins>update</ins> that I actually needed to make.</p>
+        <section>
+            <h2>ins and del</h2>
+            <p>This would be good if there was a <del>deletion</del> <ins>update</ins> that I actually needed to make.</p>              
+        </section>
 
-        <h2>search</h2>
-        <search>
-            <input type="search" placeholder="Search for something...">
-            <button type="submit">Search</button>
-        </search>        
+        <section>
+            <h2>kbd</h2>
+            <p>My least favorite git command is <kbd>git merge</kbd> because merge conflicts are painful.</p>
+        </section>
 
-        <h2>kbd</h2>
-        <p>My least favorite git command is <kbd>git merge</kbd> because merge conflicts are painful.</p>
-
+        <div role="search">
+            <form action="/search" method="get">
+                <input type="search" name="q" placeholder="Search projects or blog posts...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        
     </main>
 
 </body>
